@@ -1,0 +1,15 @@
+[package]
+name = "cli"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anyhow.workspace = true
+clap.workspace = true
+tokio.workspace = true
+tracing.workspace = true
+crawler = { path = "../../crates/crawler" }
+search = { path = "../../crates/search" }
+testing = { path = "../../crates/testing" }
+storage = { path = "../../crates/storage" }
+common = { path = "../../crates/common" }

@@ -1,0 +1,14 @@
+schema:
+  fields:
+    - name: path
+      type: text
+      stored: true
+    - name: contents
+      type: text
+      stored: false
+    - name: language
+      type: text
+      stored: true
+embedding:
+  model: demo-code-search.onnx
+  dimension: 768

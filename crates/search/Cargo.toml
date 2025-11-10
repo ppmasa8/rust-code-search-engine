@@ -1,0 +1,12 @@
+[package]
+name = "search"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anyhow.workspace = true
+models = { path = "../models" }
+query = { path = "../query" }
+indexer = { path = "../indexer" }
+embedding = { path = "../embedding" }
+tracing.workspace = true

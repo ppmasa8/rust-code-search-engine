@@ -1,0 +1,14 @@
+id: feature-search
+title: Text + embedding search API
+background: |
+  Provide a simple HTTP endpoint that accepts free-form text queries
+  and returns code snippets ranked by semantic + lexical scores.
+acceptance_criteria:
+  - API server exposes POST /search returning 200 with JSON body
+  - Search results include highlights and deterministic ordering for identical scores
+  - Query parsing supports filter syntax like lang:rust
+related_crates:
+  - apps/api
+  - crates/search
+  - crates/query
+  - crates/contracts

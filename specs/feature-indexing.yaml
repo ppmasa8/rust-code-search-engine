@@ -1,0 +1,14 @@
+id: feature-indexing
+title: Source ingestion and incremental indexing
+background: |
+  CLI initiates crawlers that read source code trees and feed
+  the Tantivy-based indexer. Storage layer persists raw docs.
+acceptance_criteria:
+  - CLI crawl command fetches at least one document and hands it to indexer
+  - Index schema contains path, contents, and language fields
+  - In-memory storage exposes list + insert operations
+related_crates:
+  - apps/cli
+  - crates/crawler
+  - crates/indexer
+  - crates/storage

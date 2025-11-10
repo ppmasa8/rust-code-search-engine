@@ -1,0 +1,19 @@
+[package]
+name = "e2e-tests"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+contracts = { path = "../../crates/contracts" }
+models = { path = "../../crates/models" }
+
+[dev-dependencies]
+anyhow.workspace = true
+tokio.workspace = true
+common = { path = "../../crates/common" }
+search = { path = "../../crates/search" }
+testing = { path = "../../crates/testing" }
+embedding = { path = "../../crates/embedding" }
+indexer = { path = "../../crates/indexer" }
+crawler = { path = "../../crates/crawler" }
+storage = { path = "../../crates/storage" }
