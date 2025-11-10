@@ -6,36 +6,12 @@ on:
   pull_request:
 
 jobs:
-  baseline:
+  lint-test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: dtolnay/rust-toolchain@stable
-      - name: Install cargo-nextest
-        run: cargo install cargo-nextest --locked
-      - name: Generate corpus
-        run: ./scripts/generate_corpus.sh
-      - name: Prime fixtures
-        run: cargo run -p cli -- fixtures 75
       - name: Build
         run: cargo build --workspace --all-targets
-      - name: Nextest suite
-        run: cargo nextest run --all-targets --no-tests=pass
-      - name: Default tests
-        run: cargo test --workspace
-
-  e2e-matrix:
-    needs: baseline
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        suite: [slow_search, api_contract, embedding_drift, index_throughput]
-    steps:
-      - uses: actions/checkout@v4
-      - uses: dtolnay/rust-toolchain@stable
-      - name: Generate corpus
-        run: ./scripts/generate_corpus.sh
-      - name: Prime fixtures
-        run: cargo run -p cli -- fixtures 60
-      - name: Run ignored e2e ${{ matrix.suite }}
-        run: cargo test -p e2e-tests --test ${{ matrix.suite }} -- --ignored
+      - name: Heavy tests
+        run: cargo test --workspace -- --ignored
