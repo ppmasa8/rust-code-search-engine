@@ -20,7 +20,7 @@ jobs:
       - name: Build
         run: cargo build --workspace --all-targets
       - name: Nextest suite
-        run: cargo nextest run --all-targets --no-tests=skip
+        run: cargo nextest run --all-targets --no-tests=pass
       - name: Default tests
         run: cargo test --workspace
 
