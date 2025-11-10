@@ -1,0 +1,17 @@
+# Binaries and build artifacts
+/target/
+
+# Editor / OS files
+.DS_Store
+
+# Cargo metadata
+Cargo.lock
+
+# Generated data
+/data/
+
+# Scripts outputs / temp
+*.log
+
+# Node-style ignores (if any docs/scripts use npm)
+node_modules/

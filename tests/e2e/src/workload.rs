@@ -12,6 +12,13 @@ pub fn fan_out_results(results: &[SearchResult], multiplier: usize) -> Vec<Searc
             expanded.push(clone);
         }
     }
+    expanded.sort_by(|left, right| {
+        right
+            .score
+            .partial_cmp(&left.score)
+            .unwrap_or(std::cmp::Ordering::Equal)
+            .then_with(|| left.path.cmp(&right.path))
+    });
     expanded
 }
 
