@@ -46,3 +46,8 @@ cargo test --workspace -- --ignored
 - cargo test -- --ignored を -- --ignored slow_search::search_pipeline_regression ... のように並列ワーカーへ分解し、strategy.matrix で同時実行。
 - 依存 DL を cargo fetch＋sparse プロトコルにし、GitHub Actions の CARGO_REGISTRIES_CRATES_IO_PROTOCOL=sparse や CARGO_HOME キャッシュで縮める。
 
+## CI/CD スピードアップチャレンジ ルール
+
+このリポジトリは「重い前提の CI をどうスマートに最適化するか」を競うハンズオン用です。負荷を単に削るのではなく、以下のガイドラインに沿って“意味のある重さ”を保ったまま工夫してください。
+
+**負荷を活かす**: フィクスチャ生成や `#[ignore]` テストを消し去るだけの高速化は禁止。キャッシュ・feature flag・並列化などで効果的に扱うこと。
