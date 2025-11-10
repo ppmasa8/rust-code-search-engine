@@ -1,6 +1,6 @@
 # Rust Code Search Engine Workspace
 
-このモノレポは、Tantivy と ONNX ベースのコード検索エンジン用に設計された参考構成です。クレートを責務ごとに分割し、LLM や CI/CD が扱いやすいようにしています。
+このモノレポは、Tantivy と ONNX ベースのコード検索エンジン用に設計された参考構成です。
 
 ## ディレクトリ構成
 
