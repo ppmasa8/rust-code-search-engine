@@ -11,14 +11,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: dtolnay/rust-toolchain@stable
-      - name: Cache cargo
-        uses: actions/cache@v4
-        with:
-          path: |
-            ~/.cargo/registry
-            ~/.cargo/git
-            target
-          key: ci-${{ runner.os }}-${{ hashFiles('**/Cargo.lock') }}
       - name: Build
         run: cargo build --workspace --all-targets
       - name: Heavy tests

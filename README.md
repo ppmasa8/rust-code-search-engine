@@ -20,7 +20,5 @@
 
 ```bash
 cargo build --workspace
-cargo test --workspace -- --ignored   # 重いE2Eテスト用
+cargo test --workspace -- --ignored
 ```
-
-> **Note**: 現時点のテストはデモ目的で意図的に遅くしており、最適化の余地を残しています。
